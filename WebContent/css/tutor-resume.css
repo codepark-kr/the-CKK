@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+/* 배경의 요-wrapper */
+.t-resume-wrapper{
+	    width: 84em;
+        height: 70em; 
+        background-color: #f6faff;  
+    /*     border: 1px solid red;   */
+        padding: 2em;
+        padding-top: 1em;
+        margin-top: 3em;
+        margin-left: 7em;
+        margin-right: 0em;
+        background: rgba(216, 227, 243, 0.6);            
+		box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+            inset -4px -4px 6px 0 rgba(255,255,255,.5),
+            inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+            outline: none;
+            border: none;
+            border-radius: 3rem;
+            z-index: -10;
+}
+#certA-btn, #certR-btn{
+	font-size: 1.3em;
+	padding: 0em;
+	border-radius: 50%;
+	width: 1.4em;
+	height: 1.4em;
+	color: white;
+}
+#certA-btn{
+	background: yellowgreen;
+	margin-bottom: -1em;
+	margin-top: .4em;
+}
+#certR-btn{
+	background: red;
+	color: white;
+	margin-bottom: .4em;
+}
+#certA-btn:hover, #certR-btn:hover{
+/* 	font-size: 1.34em; */
+/*         box-shadow: 1rem 1rem 1rem #BCC6D2, -1rem -1rem 1rem rgba(244, 249, 255, 0.726);
+        transition: linear .4s; */
+}
+
+/* 폼 전체를 감싸주는 철-wrapper */
+.res-inner{
+	 margin-top: 2.5em;
+    padding: 40px;
+    /* padding-top: 20px; */
+    margin-bottom: 3em;
+    width: 40em;
+    height: 61em;
+    margin-left: auto;
+    margin-right: auto;
+/*     text-align: center; */
+            box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2, 
+            -0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+        border-radius: 3rem;
+        background-color: #E6EEF8;
+}
+.res-inner:hover{
+	  box-shadow: 1rem 1rem 1rem #BCC6D2, 
+        -1rem -1rem 1rem rgba(244, 249, 255, 0.726);
+}
+	.page-title-p{
+	font-size: 2em;
+	color: #3B4654;
+	font-weight: bold;
+	margin-top: .4em;
+	text-align: center;
+	}
+table{
+	text-align: center;
+	margin-top: -.6em;
+	margin-left: .4em; 
+	width: 39em;
+	border: 1px solid #dbdfe4;
+}
+table th, td{
+	border-collapse: collapse;
+	border: 1px solid #dbdfe4;
+ /* 	border: 1px solid black;  */
+  /* 	border: 1px solid #e8ecf1;  */
+}
+table td{
+	width: 16em;
+}
+table th, label{
+	/* width: 20em; */
+	font-size: 1.1em;
+}
+#tr-empty-tr{
+	width: 0em;
+	display: none;
+/* 	border: 1px solid teal; */
+}
+input{
+	margin-top: .4em;
+}
+input[type="text"]{
+	margin-top: .6em;
+	margin-bottom: .6em;
+	width: 17em;
+	border-radius: 2rem;
+}
+	#award-record{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 38em;
+	height: 8em;
+	font-size: 1em;
+	padding: 2em;
+/* 	padding-left: 2em;
+	padding-right: 2em; */
+	margin-left: 0em;
+	margin-right: 0em;
+	outline: none;
+	border: none;
+/* 	box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2, -0.5rem 
+	-0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+        border-radius: 3rem 3rem 3rem 3rem; */
+/*         border-radius: 0rem 0rem 3rem 3rem; */
+        background-color: #E6EEF8;
+	}
+	#career-name{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 38em;
+	height: 8em;
+	font-size: 1em;
+	padding: 2em;
+/* 	padding-left: 2em;
+	padding-right: 2em; */
+	margin-left: 0em;
+	margin-right: 0em;
+	outline: none;
+	border: none;
+/* 	box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2, -0.5rem 
+	-0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+        border-radius: 3rem 3rem 3rem 3rem; */
+/*         border-radius: 0rem 0rem 3rem 3rem; */
+        background-color: #E6EEF8;
+	}
+	textarea{
+	text-align: center;
+	}
+	textarea:hover{
+	box-shadow: 1rem 1rem 1rem #BCC6D2, 
+	-1rem -1rem 1rem rgba(244, 249, 255, 0.726);
+	}
+	::placeholder {
+  	opacity: .7;
+  	font-family: 'IBMPlexSansKR-Regular';
+	}
+		.hidden-label:hover, .file-label:hover{
+		color: blue;
+		text-decoration: underline;
+		font-weight: bold;
+	}
+	/* 자격증 코드 추가 & 제거 버튼 td */
+	#ar-btn{
+/* 	border: 1px solid magenta; */
+/* 	width: 3em; */
+	height: 1em;
+	line-height: 1em;
+	width: 4em;
+	flot: left;
+	}
+	input[type="button"]{
+	font-size: 1.1em;
+	}
+	.tr-btns{
+	text-align: center;
+	margin-top: .4em;
+	}
+	input[name^="cert-Code"],input[name^="cert-Name"]{
+	width: 24em;	
+}
+#certCodee{
+	}
+	img{
+	margin-top: .4em;
+	}
+	.tr-btns{
+	text-align: center;
+	}
+	#acceptResume{
+	background-color: yellowgreen;
+	color: white;
+	}
+	#refuseResume{
+	background-color: red;
+	color: white;
+	}

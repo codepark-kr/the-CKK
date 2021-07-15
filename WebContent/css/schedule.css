@@ -1,0 +1,527 @@
+	  @font-face {
+        font-family: 'IBMPlexSansKR-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }  
+*, *:before, *:after {
+-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.calendar-outer{
+	margin-top: 5em;
+	margin-left: -42em;
+}
+.calendar-wrapper {
+ overflow: hidden;
+ font-family: 'IBMPlexSansKR-Regular';
+ font-weight: 100;
+ color: rgba(255, 255, 255, 1);
+ margin: 0;
+ padding: 0;
+background-color: #212121;
+ -webkit-touch-callout: none;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+ text-align: center;
+
+}
+select{
+	outline: none;
+	border: none;
+}
+.co-h2{
+	font-size: 1.2em;
+	margin-bottom: 1.4em;
+}
+table{
+	width: 20em;
+	text-align: center;
+	margin-left: 8em;
+	margin-bottom: 1em;
+}
+table th, td{
+	border-collapse: collapse;
+	border: 1px solid rgba(219, 219, 219, 0.25);
+	padding-top: .4em;
+	padding-bottom: .4em;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-size: .9em;
+}
+.calendar-sec{
+	margin-top: -.2em;
+	margin-left: 1em;
+	position: absolute;
+  	top: 12em;
+  	left: 54em;
+  	border: 1px solid rgba(59, 70, 84, 0.60);
+	width: 36em;
+	min-height: 50em;
+    max-height: 60em;
+    border-radius: 3rem;
+    overflow: auto;
+    box-shadow: .6rem .6rem .6rem #272727, -1rem -1rem 1rem #191919;
+    background: #202020;
+    color: rgba(219, 219, 219, 0.95); 
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+.sche-title{
+	margin-top: 1.6em;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.sch-cont{
+/* 	border: 1px solid red; */
+	padding-left: 2em;
+	padding-right: 2em;
+	height: 7.4em;
+	max-height: 7.4em;
+	overflow: auto;
+}
+.span-record{
+	text-align: center;
+/* 	border: 1px solid tomato; */
+}
+.month-record{
+	margin: 1em;
+	text-align: center;
+	width: 100%;
+	padding: .4em;
+	border-radius: 1.4rem;
+}
+#chk-month, #recordId{
+	margin-left: 2em;
+	text-align: center;
+	width: 23em;
+	padding: .6em;
+	border-radius: 1.4rem;
+}
+#recordId{
+	text-align: center;
+	margin-left: 0em;
+/* 	border: 1px solid teal; */
+	width: 23em;
+	height: 2.6em;
+	margin-left: 4.7em;
+	margin-bottom: 2em;
+}
+option{
+	text-align: center;
+}
+#sch-hr{
+	margin-top: 1em;
+	width: 80%;
+	color:color: rgba(219, 219, 219, 0.5); 
+	opacity: .2;
+}
+.mates-wrapper{
+	margin-top: 2em;
+}
+.tutor-day{
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+/* 얘가 문제임  */
+#calendar {
+	border-radius: 3rem;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  padding-bottom: 3em;
+  width: 42em;
+  min-height: auto;
+  max-height: 60em;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 1rem 1rem 1rem #292929, -.7rem -.7rem .7rem #191919;
+/*   box-shadow: 1rem 1rem 1rem #242424, -1rem -1rem 1rem #191919; */
+
+/*   border: 1px solid gray; */
+}
+.header {
+font-family: 'IBMPlexSansKR-Regular';
+  height: 5em;
+  width: 100%;
+  background: #323232;
+  text-align: center;
+  position:relative;
+  z-index: 100;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  padding-top: .4em;
+  font-size: 1.4em;
+  line-height: 3em;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+/* 여기서부터 좌우 화살표 설정 */
+.left, .right {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  top: 50%;
+  margin-top: 0em;
+  cursor: pointer;
+}
+
+.left {
+  border-width: 7.5px 10px 7.5px 0;
+  border-color: transparent rgba(160, 159, 160, 1) 
+  transparent transparent;
+  left: 20px;
+}
+
+.right {
+  border-width: 7.5px 0 7.5px 10px;
+  border-color: transparent transparent 
+  transparent rgba(160, 159, 160, 1);
+  right: 20px;
+}
+
+.month {
+  /*overflow: hidden;*/
+  opacity: 0;
+}
+
+.month.new {
+  -webkit-animation: fadeIn 1s ease-out;
+  
+  opacity: 1;
+}
+
+.month.in.next {
+  -webkit-animation: moveFromTopFadeMonth .4s ease-out;
+  -moz-animation: moveFromTopFadeMonth .4s ease-out;
+  animation: moveFromTopFadeMonth .4s ease-out;
+  opacity: 1;
+}
+
+.month.out.next {
+  -webkit-animation: moveToTopFadeMonth .4s ease-in;
+  -moz-animation: moveToTopFadeMonth .4s ease-in;
+  animation: moveToTopFadeMonth .4s ease-in;
+  opacity: 1;
+}
+
+.month.in.prev {
+  -webkit-animation: moveFromBottomFadeMonth .4s ease-out;
+  -moz-animation: moveFromBottomFadeMonth .4s ease-out;
+  animation: moveFromBottomFadeMonth .4s ease-out;
+  opacity: 1;
+}
+
+.month.out.prev {
+  -webkit-animation: moveToBottomFadeMonth .4s ease-in;
+  -moz-animation: moveToBottomFadeMonth .4s ease-in;
+  animation: moveToBottomFadeMonth .4s ease-in;
+  opacity: 1;
+}
+
+.week {
+ background: #282828;
+}
+
+/* (예빈)이 친구를 수정하여 일별 각 칸의 크기를 조정할 수 있고, 
+	수정하는 경우 반드시 arrow의 포지션 값을 수정해 줄 것. */
+.day {
+  display: inline-block;
+  width: 6em;
+  height: 6em;
+  padding: 10px;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+  background: #282828;
+  position: relative;
+  z-index: 100;
+}
+
+.day.other {
+ color: rgba(255, 255, 255, .3);
+}
+
+.day.today {
+  color: rgba(156, 202, 235, 1);
+}
+
+.day-name {
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, .5);
+  letter-spacing: .7px;
+}
+
+.day-number {
+  font-size: 24px;
+  letter-spacing: 1.5px;
+}
+
+
+.day .day-events {
+  list-style: none;
+  margin-top: 3px;
+  text-align: center;
+  height: 12px;
+  line-height: 6px;
+  overflow: hidden;
+}
+
+.day .day-events span {
+  vertical-align: top;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 5px;
+  height: 5px;
+  line-height: 5px;
+  margin: 0 1px;
+}
+
+.blue { background: rgba(156, 202, 235, 1); }
+.orange { background: rgba(247, 167, 0, 1); }
+.green { background: rgba(153, 198, 109, 1); }
+.yellow { background: rgba(249, 233, 0, 1); }
+.white { background: white;}
+
+.details {
+	text-align: center;
+  position: relative;
+  width: 100%;
+  height: 6em;
+  background: #323232;
+  margin-top: 7px;
+  border-radius: 1.4rem 1.4rem 0rem 0rem;
+  letter-spacing: 1px;
+}
+
+.details.in {
+  -webkit-animation: moveFromTopFade .5s ease both;
+  -moz-animation: moveFromTopFade .5s ease both;
+  animation: moveFromTopFade .5s ease both;
+}
+
+.details.out {
+  -webkit-animation: moveToTopFade .5s ease both;
+  -moz-animation: moveToTopFade .5s ease both;
+  animation: moveToTopFade .5s ease both;
+}
+
+.arrow {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin-left: -2px;
+  width: 1px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #313131 transparent;
+  transition: all 0.7s ease;
+}
+
+.events {
+  height: 75px;
+  padding: 7px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.events.in {
+  -webkit-animation: fadeIn .3s ease both;
+  -moz-animation: fadeIn .3s ease both;
+  animation: fadeIn .3s ease both;
+}
+
+.events.in {
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+.details.out .events {
+  -webkit-animation: fadeOutShrink .4s ease both;
+  -moz-animation: fadeOutShink .4s ease both;
+  animation: fadeOutShink .4s ease both;
+}
+
+.events.out {
+  -webkit-animation: fadeOut .3s ease both;
+  -moz-animation: fadeOut .3s ease both;
+  animation: fadeOut .3s ease both;
+}
+
+.event {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: .5px;
+  padding: 2px 16px;
+  vertical-align: top;
+}
+
+.event.empty {
+  color: #eee;
+  margin-top: .6em;
+}
+
+.event-category {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  margin: 6px 0 0;
+  vertical-align: top;
+}
+
+.event span {
+  display: inline-block;
+  padding: 0 0 0 7px;
+}
+
+/* (예빈)이 친구가 문제의 하단-분야별 정보 부분. width는 자동으로 100%로 맞추고, 
+	height와 line-height를 맞춰서 내용이 잘리는 일이 없도록 할 것.
+	캘린더가 통째로 들어가는 #calendar:div에 padding-bottom을 
+	legend의 height & line-height와 동일한 크기로 설정하면 
+	calendar:div의 height을 auto로 맞추더라도 legend가 가려지지 않게 됨. 
+	(캘린더 div가 legend의 높이만큼 padding을 통한 여유 공간을 항상 남겨두므로)
+ */
+.legend {
+  position: absolute;
+  letter-spacing: 1px;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  background: #323232;
+/*   border: 1px solid magenta; */
+  text-align: center;
+  font-size: 1em;
+
+}
+
+.entry {
+  position: relative;
+  padding: 0 0 0 25px;
+  font-size: 13px;
+  display: inline-block;
+  line-height: 30px;
+  background: transparent;
+}
+
+.entry:after {
+  position: absolute;
+  content: '';
+  height: 5px;
+  width: 5px;
+  top: 12px;
+  left: 14px;
+}
+
+/* 이 곳에서 선언되는 색상이 곧 하단 분야별 색상 주석에 들어가는 부분. 
+	단, 자동으로 이벤트 색상과 연동되지 않으므로 주의할 것. */
+.entry.blue:after { background: rgba(156, 202, 235, 1); }
+.entry.orange:after { background: rgba(247, 167, 0, 1); }
+.entry.green:after { background: rgba(153, 198, 109, 1); }
+.entry.yellow:after { background: rgba(249, 233, 0, 1); }
+.entry.white:after { background: white; }
+
+
+/* Animations are cool!  */
+@-webkit-keyframes moveFromTopFade {
+  from { opacity: .3; height:0px; margin-top:0px; -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveFromTopFade {
+  from { height:0px; margin-top:0px; -moz-transform: translateY(-100%); }
+}
+@keyframes moveFromTopFade {
+  from { height:0px; margin-top:0px; transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToTopFade {
+  to { opacity: .3; height:0px; margin-top:0px; opacity: 0.3; -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveToTopFade {
+  to { height:0px; -moz-transform: translateY(-100%); }
+}
+@keyframes moveToTopFade {
+  to { height:0px; transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToTopFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(-30%) scale(.95); }
+}
+@-moz-keyframes moveToTopFadeMonth {
+  to { opacity: 0; -moz-transform: translateY(-30%); }
+}
+@keyframes moveToTopFadeMonth {
+  to { opacity: 0; -moz-transform: translateY(-30%); }
+}
+
+@-webkit-keyframes moveFromTopFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(30%) scale(.95); }
+}
+@-moz-keyframes moveFromTopFadeMonth {
+  from { opacity: 0; -moz-transform: translateY(30%); }
+}
+@keyframes moveFromTopFadeMonth {
+  from { opacity: 0; -moz-transform: translateY(30%); }
+}
+
+@-webkit-keyframes moveToBottomFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(30%) scale(.95); }
+}
+@-moz-keyframes moveToBottomFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(30%); }
+}
+@keyframes moveToBottomFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(30%); }
+}
+
+@-webkit-keyframes moveFromBottomFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(-30%) scale(.95); }
+}
+@-moz-keyframes moveFromBottomFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(-30%); }
+}
+@keyframes moveFromBottomFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(-30%); }
+}
+
+@-webkit-keyframes fadeIn  {
+  from { opacity: 0; }
+}
+@-moz-keyframes fadeIn  {
+  from { opacity: 0; }
+}
+@keyframes fadeIn  {
+  from { opacity: 0; }
+}
+
+@-webkit-keyframes fadeOut  {
+  to { opacity: 0; }
+}
+@-moz-keyframes fadeOut  {
+  to { opacity: 0; }
+}
+@keyframes fadeOut  {
+  to { opacity: 0; }
+}
+
+@-webkit-keyframes fadeOutShink  {
+  to { opacity: 0; padding: 0px; height: 0px; }
+}
+@-moz-keyframes fadeOutShink  {
+  to { opacity: 0; padding: 0px; height: 0px; }
+}
+@keyframes fadeOutShink  {
+  to { opacity: 0; padding: 0px; height: 0px; }
+}

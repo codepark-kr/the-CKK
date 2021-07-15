@@ -1,0 +1,342 @@
+@charset "UTF-8";
+	.search{
+		display: inline-block;
+	}
+	input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+	}
+	
+	
+	/* 여기서부터 내 코드 */
+	
+	/* 최상위 wrapper div */
+	.class-list-wrapper{
+	 	width: 89em;
+        height: 59em;
+        background-color: #E6EEF8;  
+/*           border: 1px solid red;  */ 
+        padding: 2em;
+        padding-top: 1em;
+        background: rgba(216, 227, 243, 0.6);            
+		box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+            inset -4px -4px 6px 0 rgba(255,255,255,.5),
+            inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+            outline: none;
+            border: none;
+            border-radius: 3rem;
+            z-index: -10;
+        margin-top: 5em;
+        margin-left: 3em;
+        
+	}
+	.class-list-title{
+	letter-spacing: 2px;
+	margin-top: .6em;
+	margin-bottom: .6em;
+	margin-left: .4em;
+	font-size: 2.4em;
+	color: #3B4654;
+	font-weight: bold;
+	}
+	.class-list-form{
+/* 	border: 1px solid yellowgreen;  */
+	}
+	#board-search{
+/* 	border: 1px solid blue; */
+	}
+	/* 키워드별 검색 버튼들 - 상위 div */
+	#class-search-buttons{
+/*   	border: 1px solid teal;  */
+	text-align: left;
+	width: 88em;
+	float: left;
+	padding-top: .4em;
+	padding-bottom: .4em;
+	padding-left: 2em;
+	margin-left: -.5em;
+	border-radius: 1.4rem;
+	box-shadow:
+            -7px -7px 20px 2px rgb(247, 251, 255),
+            -4px -4px 10px 0px rgb(196, 205, 219), 
+            7px 7px 20px 0px rgba(46, 51, 59, 0.322),
+            4px 4px 10px 0px rgba(7, 7, 7, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),
+            inset 0px 0px 0px 0px rgba(0, 26, 255, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),        
+            inset 0px 0px 0px 0px rgba(0, 68, 255, 0.067);
+	
+	}
+	#keywordType, #keyword{
+	font-size: .74em;
+	font-family: 'IBMPlexSansKR-Regular';
+	top: -3.8em;
+	border-radius: 1rem;
+/* 	border: 1px solid orange; */
+	position: relative;
+	height: 2.6em;
+	}
+	#keywordType:hover, #keyword:hover{
+	font-weight: bold;
+	color: #3B4654
+	}
+	
+	#keywordType{
+	text-align: center;
+	margin-right: 1em;
+	margin-left: 50em;
+	width: 8em;
+ 	padding-left: 1.4em;
+ 	color: rgba(59, 70, 84, 0.60);
+	}
+
+	/* 키워드별 검색 버튼들 */
+	input[id^="class-s-btn"], .execute-search{
+	margin: .6em;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-left: 1.6em;
+	padding-right: 1.6em;
+	font-size: .8em;
+	}
+	
+	.execute-search{
+	top: -8.4em;
+	left: 70em;
+	padding-left: 2.2em;
+	padding-right: 2.2em;
+	position: relative;
+	
+	}
+	.open-class-btn{
+	top: -12em;
+	left: 78em;
+	padding-left: 2.2em;
+	padding-right: 2.2em;
+	position: relative;
+	}
+	.open-pls{
+/* 	margin-top: -12em;
+	margin-left: 62.6em;
+	position: relative; */
+
+	}
+		/* 드롭다운으로 내려오는 검색 키워드 친구들 : 공통 사항 */
+		.search-sec{
+			font-family: 'IBMPlexSansKR-Regular';
+			display: none;
+			top: 22.4em;
+			height: 7.2em;
+			position: absolute;
+        	margin-left: 0em;
+            position: absolute;
+            padding-top: 1.4em;
+          	text-align: center;
+        	border-radius: 1rem;
+            background-color: rgba(255, 255, 255, .7);
+		}
+		#search-category{
+            left: 5.8em;
+            width: 9.8em;
+		}
+		#search-location{
+		 left: 16em;
+		 width: 5.6em;
+		}
+		#search-location input[type="checkbox"]{
+		/* margin-right: 5.6em; */
+		}
+		.search-sec label{
+		font-size: .8em;
+        color: rgba(59, 70, 84, 0.90);
+        font-weight: 400;
+        float: right;
+		} 
+		.search-sec label:hover {
+		color: #3B4654;
+        font-weight: bold;
+        font-size: .84em;
+        }
+		.search-sec input[type="checkbox"]{
+		border: 1px solid rgba(230, 230, 230, .8); 
+		float: right;
+		margin-left: .6em;
+		margin-right: 1.2em;
+		}
+		#search-price{
+		left: 22em;
+		width: 8.4em;
+		padding-left: .6em;
+		}
+	/* 가격별 검색에서 가격대를 입력할 input:text 필드 */
+		.search-sec .priceInput{
+		width: 9em;
+		height: 2em;
+		box-shadow: none;
+		border-radius: none;
+		background-color: rgba(255, 255, 255, .6);
+		margin-right: .2em;	
+		border: 1px solid rgba(230, 230, 230, .8); 
+		}
+		.cla-won{
+		display: inline-block;
+		font-size: .8em;
+		margin-right: .4em;
+		margin-bottom: -20em;
+		}
+		.from-to{
+		font-size: .8em;
+		margin-top: -.8em;
+		margin-bottom: -.8em;
+		}
+		#search-date{
+		left: 31.4em;
+		width: 9em;
+		}
+		.search-sec input[type="date"]{
+		width: 12em;
+		height: 2.6em;
+		box-shadow: none;
+		border-radius: none;
+ 		background-color: rgba(255, 255, 255, .6); 
+		margin-top: 1em;
+		margin-right: .2em;
+ 		border: 1px solid rgba(230, 230, 230, .8); 
+ 		font-size: .74em;
+		}
+		#search-date input[type="button"]{
+		box-shadow: none;
+		border-radius: .6rem;
+		padding: .1em 1em .1em 1em;
+		background: white;
+ 		border: 1px solid rgba(220, 220, 220, .8);
+ 		font-weight: 400; 
+		}
+		#search-date input[type="button"]:hover{
+		    box-shadow: .3rem .3rem .3rem rgba(220, 220, 220, .6), 
+		    -.3rem -.3rem .3rem #F6FAFF;
+            background: white;
+            font-weight: bold;
+		}
+
+	/* .search-sec 드롭다운 내부의 안내문 타이틀 - 일괄 */
+	.cate-title{
+			margin-top: 0em;
+            margin-bottom: 1em;
+            letter-spacing: 1px;
+            font-size: .9em;
+            color: #3B4654;
+            font-weight: bold;
+		}
+	.board-outer-class{
+/* 	border: 1px solid magenta; */
+	padding: 0em 2em 2em 0em;
+	float:left;
+	margin-top: -7.4em;
+	margin-left: -1em;
+	width: 92em;
+	height: 40em;
+	}
+	/* 클래스 리스트 내부에 들어가는 이미지들 - 개별 wrapper */
+	.cla-li-sec{
+	display: inline-block;
+  	background-size: cover; 
+	width: 200px;
+	height: 200px;
+	}
+	.img-class-wrapper{
+/* 	border: 1px solid red; */
+	height: 19em;
+	padding: .8em 1em 1em .8em;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	float: left;
+	border-radius: 2rem;
+	box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2,
+		-0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+        transition: linear .14s;
+        background-color: #E6EEF8;
+	}
+	.img-class-wrapper:hover{
+	box-shadow: 1rem 1rem 1rem #BCC6D2, -1rem -1rem 1rem #F6FAFF;
+    background: rgb(236, 244, 255);
+    transition: linear .14s;
+	}
+	/* 클래스 리스트 - 이미지 wrapper를 호버하면 클래스 제목의 크기를 다소 키운다. */
+	.img-class-wrapper:hover .cla-li-title{
+ 	font-size: .89em; 
+	trnasition: .14s linear;
+	}
+	/* 클래스 리스트 내부에 들어가는 이미지들 - 각자 */
+	#class-li-pics{
+	margin-top: .4em;
+	border-radius: 1.6rem 1.6rem 0em 0em;
+/* 	border: 1px solid blue; */
+	}
+	
+	/* 클래스 리스트 내부에 들어가는 정보들 - outer-wrapper */	
+	.class-list-info{
+	border: 1px solid white;  
+	margin-top: 12.6em;
+	height: 4.4em;
+	border-radius: 0em 0em 1.6em 1.6em;
+	padding: .6em;
+	text-align: center;
+	background: rgb(242, 247, 255);
+	z-index: 999;
+	}
+	.cla-li-title{
+	color: #3B4654;
+	letter-spacing: 1px;
+	margin-top: 0em;
+	margin-bottom: -1em;
+	font-weight: bold;
+	font-size: .88em;
+	transition: .14s linear;
+	}
+	.cla-li-tutor, .cla-li-price{
+	font-weight: bold;
+	font-size: .9em;	
+	color: rgba(59, 70, 84, 0.60);
+	letter-spacing: 0px;
+	}
+	.cla-li-tutor{
+	margin-bottom: -1em;
+	}
+	#board-pageBar{
+/* 	border: 1px solid green; */ 
+	text-align: center;
+	font-size: 1em;
+	color: rgba(59, 70, 84, 0.60);
+	font-weight: bold;
+	width: 90em;
+/* 	float: left;
+	padding-bottom: .4em;
+	padding-left: 2em; */
+ 	margin-left: 4.5em; 
+ 	margin-top: -5em;
+ 	margin-bottom: 4em;
+	height: 2.8em;
+	line-height: 2.8em;
+	border-radius: 1rem;
+	box-shadow:
+            -7px -7px 20px 2px rgb(247, 251, 255),
+            -4px -4px 10px 0px rgb(196, 205, 219), 
+            7px 7px 20px 0px rgba(46, 51, 59, 0.322),
+            4px 4px 10px 0px rgba(7, 7, 7, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),
+            inset 0px 0px 0px 0px rgba(0, 26, 255, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),        
+            inset 0px 0px 0px 0px rgba(0, 68, 255, 0.067);
+	}
+	#pagebar{
+	vertical-align: center;
+	}
+	#pagebar:hover{
+	font-size: 1em;
+	color: #3B4654;
+	}
+
+
+	

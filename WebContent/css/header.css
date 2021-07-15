@@ -1,0 +1,363 @@
+
+/* 단위 & 디자인 리팩토링 완료 : 2020.08.19. */
+@charset "UTF-8";
+       @import url("https://rsms.me/inter/inter.css"); 
+        /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'); */
+        @font-face {
+        font-family: 'IBMPlexSansKR-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }  
+            html, body{
+            font-family: 'IBMPlexSansKR-Regular';
+            transform-origin: top left;
+            font-family: 'IBMPlexSansKR-Regular';
+/*          border: 1px solid blue; */
+        }
+        body{
+        min-height: 66em;
+  /*       border: 1px solid gray; */
+  /*       background-color: #E6EEF8;   */
+        background-color: #f6faff;
+        border-radius: 3rem;
+        width: 98em;
+		height: 72em;
+		font-family: 'IBMPlexSansKR-Regular';
+        /* 2020.08.19. 차후에 body 최상위 div로 전 페이지 공통 wrapper 깔 것. */
+        }
+        .user-navbar, .admin-navbar{
+        	font-family: 'IBMPlexSansKR-Regular';
+        	margin-top: 0em;
+            width: 98em;
+            height: 6em;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2, -0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+        	border-radius: 3rem;
+        	background-color: #f6faff;
+        	font-weight: bold;
+      /*   	z-index: 800; */
+        }
+      
+        /* logo-btn을 제외한 상단의 메뉴-버튼들의 위치는 여기서 div 단위로 조작한다. */
+        .navbar-user-menu, .navbar-admin-menu{
+        font-family: 'IBMPlexSansKR-Regular';
+        letter-spacing: 1px;
+            top: 1.7em;
+            width: 98em;
+            float: left;
+            left: 3em;
+            padding-right: 3em;
+            position: absolute;
+            display: block;
+        }
+        .navbar-admin-menu{
+        
+        }
+        
+        
+        /* 관리자와 유저의 상단 네비게이션바 - 버튼 메뉴의 설정은 이 곳에서 통합적으로 관리한다. */
+	button[class^="admin-navbar"], button[class^="user-navbar"], .logo-btn, #logo-btn-a{
+	font-family: 'IBMPlexSansKR-Regular';
+	letter-spacing: 1px;
+	font-weight: bold;
+            top: 1.7em;
+            padding: 7px;
+            padding-left: 16px;
+            padding-right: 16px;
+            margin: 2px;
+            font-weight: bold;
+            border: none;
+            border-radius: 3rem;
+            clip-path: inset(0 round var(--r));
+            font-size: 1.1em;
+            margin: .6%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: transparent;
+            box-shadow:
+            -7px -7px 20px 2px #fff9,
+            -4px -4px 10px 0px rgba(255, 255, 255, 0.4),
+            7px 7px 20px 0px rgba(0, 0, 0, 0.133),
+            4px 4px 10px 0px #0001,
+            inset 0px 0px 4px 0px rgba(255, 255, 255, 0.4),
+            inset 0px 0px 4px 0px rgba(0, 26, 255, 0.067),
+            inset 0px 0px 4px 0px rgba(255, 255, 255, 0.4),        
+            inset 0px 0px 4px 0px rgba(38, 0, 255, 0.067);
+            /* transition: box-shadow 0.6s cubic-bezier(.79,.21,.06,.81); */
+            color: rgba(59, 70, 84, 0.80);
+            text-transform: uppercase;
+            font-weight: bold;
+            background: #f6faff8c;
+            outline: none;
+        }
+         .logo-btn{
+         margin-right: 46em;
+         font-weight: bold;
+        } 
+        #logo-btn-a{
+         margin-right: 37em;
+         font-weight: bold;
+        }
+        a{
+         text-decoration: none;
+        }
+        input[type="submit"], input[type="button"]{
+        	font-weight: bold;
+        	letter-spacing: 1px;
+ 			font-family: 'IBMPlexSansKR-Regular';
+            padding: 6px;
+            padding-left: 18px;
+            padding-right: 18px;
+            font-weight: bold;
+            border: none;
+            clip-path: inset(0 round var(--r));
+            font-size: .8em;
+            margin: .2em;
+            margin-top: 1em;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: transparent;
+            box-shadow:
+            -7px -7px 20px 2px rgb(247, 251, 255),
+            -4px -4px 10px 0px rgb(196, 205, 219), 
+            7px 7px 20px 0px rgba(58, 62, 70, 0.253),
+            4px 4px 10px 0px rgba(0, 0, 0, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),
+            inset 0px 0px 0px 0px rgba(0, 26, 255, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),        
+            inset 0px 0px 0px 0px rgba(0, 68, 255, 0.067); 
+            /* transition: box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);  */
+            color:rgba(0, 0, 0, 0.62);
+            text-transform: uppercase;
+            border-radius: 2rem;
+            background-color: #f6faff8c;
+            outline: none;
+        }
+        button:active, input[type="submit"]:active {
+            border: none;
+            outline: none;
+            background: #eaf0f8ce;
+            box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+            inset -4px -4px 6px 0 rgba(255,255,255,.5),
+            inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+        }
+        button:hover, input[type="submit"]:hover, input[type="button"]:hover{
+            box-shadow: 1rem 1rem 1rem #BCC6D2, -1rem -1rem 1rem #F6FAFF;
+            background: #f6faff8c;
+            color: #3B4654;
+        }
+        /* 여기까지 문제 없는지 확인 완료 */
+        .welcome-back{
+            margin-top: -.8em;
+            margin-bottom: .6em;
+            text-align: center;
+            font-weight: bold;
+        }
+        .info-check{
+            font-size: .82em;
+            margin-top: -.8em;
+            margin-bottom: .6em;
+            text-align: center;
+            font-weight: bold;
+            color: rgba(59, 70, 84, 0.80);
+            letter-spacing: .5px;
+        }
+        .login-wrapper{
+            position: relative;
+        }
+        /* 마이페이지 or 로그인 버튼 클릭시 내려오는 드롭다운 로그인창 */
+        .mypage-login{
+            top: .6em;
+			position: absolute;
+            padding-top: 2.6em;
+            left: 78em;
+            width: 15.4em;
+            height: 16.4em;
+          	text-align: center;
+            box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2, 
+            -0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+        	border-radius: 1.6rem;
+            background-color: #f6faff;
+            display: none;  
+            z-index: 999;
+        }        
+        /* 비밀번호를  잊으셨나요? 클릭시 내려오는 드롭다운 비밀번호 찾기 창 */
+        .mypage-lostpw{
+        	top: 7em;
+            position: absolute;
+            padding-top: 2.6em;
+            left: 78em;
+            width: 15.4em;
+            height: 22em;
+          	text-align: center;
+            box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2, 
+            -0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+        	border-radius: 1.6rem;
+            background-color: #f6faff;
+            z-index: 999;
+/*             display: none;   */
+        }
+        /* 로그인 후 마이페이지 클릭시 드롭다운되는 마이페이지 */
+        .mypage-loggedIn{
+        	top: 7em;
+        	margin-left: -2em;
+            position: absolute;
+            padding-top: 2.6em;
+            left: 78em;
+            width: 13em;
+            height: 18em;
+          	text-align: center;
+            box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2, 
+            -0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+        	border-radius: 2rem;
+            background-color: #f6faff;
+            z-index: 999;
+            display: none;
+        }
+        /* 마이페이지 내부에 위치한 버튼들 */
+        .mypages{
+			font-family: 'IBMPlexSansKR-Regular';
+            padding: 6px;
+            padding-left: 14px;
+            padding-right: 14px;
+            font-weight: bold;
+            border: none;
+            font-size: .9em;
+			margin: .5em;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow:
+            -7px -7px 20px 2px rgb(247, 251, 255),
+            -4px -4px 10px 0px rgb(196, 205, 219), 
+            7px 7px 20px 0px rgba(58, 62, 70, 0.253),
+            4px 4px 10px 0px rgba(0, 0, 0, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),
+            inset 0px 0px 0px 0px rgba(0, 26, 255, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),        
+            inset 0px 0px 0px 0px rgba(0, 68, 255, 0.067); 
+            color: rgba(59, 70, 84, 0.80);
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 3rem;
+            background-color: #f6faff;
+            outline: none;
+        }
+        .hello{
+            margin-top: -2.2em;
+            margin-bottom: -.2em;
+            font-size: .9em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .lost-pw-question, .register-question{
+        font-size: .8em;
+        color: rgba(59, 70, 84, 0.80);
+        font-weight: 400;
+        }
+        .lost-pw-question:hover, .register-question:hover, .login-btn{
+        color: #3B4654;
+        font-weight: bold;
+        font-size: .84em;
+        }
+        /* findPwd의  성별 선택 div*/
+        .i-regi-gender{
+        margin-top: -.4em;
+        }
+        /* findPwd의 label들 */
+        .lab-gender{
+            font-family: 'IBMPlexSansKR-Regular';
+            font-size: .70em;
+            margin-bottom: .4em;
+            margin-left: .8em;
+            margin-right: .6em;
+            text-decoration: none;
+            font-weight: normal;
+            text-align: right;
+            color: rgba(59, 70, 84, 0.70);
+        }
+         .i-regi-m{
+         	width: 5em; 
+            background: #eaf0f8ce;
+            margin-right: 3em;
+            border: none;
+            outline: none;
+        }
+         .i-regi-f{
+         	width: 5em; 
+            background: #eaf0f8ce;
+            margin-left: -5.4em;
+            border: none;
+            outline: none;
+        }
+        /* findPwd의 정보 확인 및 취소 버튼 */
+        #chk-btn{
+        margin-top: 1em;
+        margin-right: 1em;
+        }
+        #login-btn{
+        position: relative;
+        display: inline-block;
+        top: .6em;
+        }
+        /* 여기까지 확인 및 리팩토링 완료 */
+        .user-login-form, .user-lostpw{
+            margin-top: -.1em;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1em;
+        }
+        input[type="text"], input[type="password"], 
+        input[type="date"], input[type="tel"], 
+        input[type="email"], select{
+            width: 14.4em;
+            height: 2.4em;
+            border-radius: 7px;
+             background: rgba(216, 227, 243, 0.6);
+            box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+            inset -4px -4px 6px 0 rgba(255,255,255,.5),
+            inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+            outline: none;
+            border: none;
+            outline: none;
+            border: none;
+            color:rgba(0, 0, 0, 0.612);
+            margin-bottom: 1.4em;
+            font-size: .7em;
+            text-align: center;
+        }
+        .lost-pw{
+            position: relative;
+            font-size: .70em;
+            margin-top: -.8em;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        .lab-chk{
+            font-size: .70em;
+            margin-bottom: .4em;
+            margin-right: .6em;
+            margin-left: -.6em;
+            text-decoration: none;
+            font-weight: normal;
+        }
+         .helloAdmin{
+       		letter-spacing: 1px;
+            margin-top: -4.6em;
+            margin-bottom: 2.2em;
+            margin-left: 44em;
+            font-size: 1em;
+            font-weight: bold;
+        }
+        

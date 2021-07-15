@@ -1,0 +1,312 @@
+@charset "UTF-8";
+/* 양 옆 사이드의 빈 공간은 중첩 프레임-div&img marquee로 채울 것. @yb */
+
+/* 여기서부터 회원 정보 수정 css 코드 */
+        @font-face {
+        font-family: 'IBMPlexSansKR-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }  
+/*         html, body{
+            font-family: 'IBMPlexSansKR-Regular';
+            margin: 0ex;
+            padding: 0ex;
+            transform-origin: top left;
+            background: rgb(224, 234, 245);
+        } */
+.wrapper-user-view{
+    /* border: 1px solid green; */
+/*     margin-top: 8em; */
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: auto;
+    border-radius: 30px;
+    border: 1px solid gray;
+}
+
+#user-frm{
+    margin-top: 6em;
+    padding: 40px;
+    /* padding-top: 20px; */
+    margin-top: 3em;
+    margin-bottom: 3em;
+    width: 300px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+            box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2, -0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+            transition: linear .5s;
+        border-radius: 3rem;
+        background-color: #E6EEF8;
+    }
+    #user-frm:hover{
+        box-shadow: 1rem 1rem 1rem #BCC6D2, -1rem -1rem 1rem rgba(244, 249, 255, 0.726);
+        transition: linear .5s;
+    }
+    
+    #pw-frm{
+    margin-top: 6em;
+    padding: 40px;
+    /* padding-top: 20px; */
+    margin-top: 3em;
+    margin-bottom: 3em;
+    width: 300px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+            box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2, -0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+            transition: linear .5s;
+        border-radius: 3rem;
+        background-color: #E6EEF8;
+    }
+    #pw-frm:hover{
+        box-shadow: 1rem 1rem 1rem #BCC6D2, -1rem -1rem 1rem rgba(244, 249, 255, 0.726);
+        transition: linear .5s;
+    }
+        input[type="button"], input[type="submit"], input[type="reset"], 
+        button{
+            font-family: 'IBMPlexSansKR-Regular';
+            padding: 6px;
+            padding-left: 14px;
+            padding-right: 14px;
+            font-weight: bold;
+            border: none;
+            clip-path: inset(0 round var(--r));
+            font-size: .8em;
+            margin: .2em;
+            margin-top: .4em;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: transparent;
+            box-shadow:
+            -7px -7px 20px 2px rgb(247, 251, 255),
+            -4px -4px 10px 0px rgb(196, 205, 219), 
+            7px 7px 20px 0px rgba(58, 62, 70, 0.253),
+            4px 4px 10px 0px rgba(0, 0, 0, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),
+            inset 0px 0px 0px 0px rgba(0, 26, 255, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),        
+            inset 0px 0px 0px 0px rgba(0, 68, 255, 0.067); 
+            /* transition: box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);  */
+            color:rgba(0, 0, 0, 0.62);
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 3rem;
+            background-color: #E6EEF8;
+            outline: none;
+        }
+        input[type="text"], input[type="password"], input[type="date"], 
+        select, option, 
+        input[type="tel"], input[type="email"],
+        #userPassword, #userPassword{
+            width: 14.4em;
+            height: 2.4em;
+            border-radius: 7px;
+            background: rgba(216, 227, 243, 0.6);
+            box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+            inset -4px -4px 6px 0 rgba(255,255,255,.5),
+            inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+            outline: none;
+            border: none;
+            color: rgba(59, 70, 84, 0.60);
+            margin-bottom: 1em;
+            font-size: .7em;
+            text-align: center;
+            /* padding-left: auto;
+            padding-right: auto; */
+            float: right;
+/*             border: 1px solid black; */
+        }
+        input[type="text"]:hover, 
+        input[type="password"]:hover, 
+        input[type="date"]:hover, 
+        select:hover, 
+        input[type="tel"]:hover, 
+        input[type="email"]:hover{
+            color: black;
+        }
+        input[type="date"]{
+            text-align-last: right;
+            font-size: 0.8em;
+             width: 13.5em;
+/*             height: 2.3em;  */
+        }
+        select{
+            width: 15.4em;
+            text-align-last: center;
+        }
+        option{
+            font-size: 1em;
+        }
+        label{
+            font-family: 'IBMPlexSansKR-Regular';
+            font-size: .9em;
+            font-weight: bold;
+            margin-right: .5em;
+            text-align: right;
+            /* border: 1px solid blue; */
+            color: rgba(59, 70, 84, 0.90);
+        }
+        .modi-inner{
+            width: 14.4em;
+            /* border: 1px solid teal; */
+            margin-bottom: 0em;
+            margin-top: -.2em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .modi-inner-btn{
+            /* border: 1px solid pink; */
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-top: .6em;
+        }
+        [class^="modi-btn"]:hover,[id^="register-btn"]:hover,
+        button:hover, #revoke:hover{
+            box-shadow: 1rem 1rem 1rem #BCC6D2, -1rem -1rem 1rem #F6FAFF;
+            background: rgb(236, 244, 255);
+            color: black;
+            /* transition: 0.3s all; */
+        }
+        .notice-p, .pw-update-title{
+            margin-top: 0em;
+            margin-bottom: 1em;
+            letter-spacing: 1px;
+            font-size: 1.6em;
+            color: #3B4654;
+            font-weight: bold;
+        }
+        .pw-up{
+        font-size: .8em;
+        margin-bottom: 3em;
+        color: rgba(59, 70, 84, 0.70);
+        font-weight: bold;
+        }
+        .pw-update{
+        color: rgba(59, 70, 84, 0.90);
+        font-weight: bold;
+        }
+	.user-div3{
+		margin-bottom: 1.2em;
+	}
+	#pw-return{
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-left: 6px;
+	}
+	#pw-change:hover,#pw-return:hover{
+	        box-shadow: 1rem 1rem 1rem #BCC6D2, -1rem -1rem 1rem #F6FAFF;
+            background: rgb(236, 244, 255);
+            color: black;
+	}
+	.userJoinFrm{
+	    margin-top: 6em;
+    padding: 40px;
+    /* padding-top: 20px; */
+    margin-top: 3em;
+    margin-bottom: 3em;
+    width: 500px;
+    height: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+            box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2, -0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+            transition: linear .5s;
+        border-radius: 3rem;
+        background-color: #E6EEF8;
+	}
+	.enroll{
+/* 	float:right; */
+/* 	border: 1px solid yellowgreen;  */
+	width: 300px;
+	height: 380px;
+	}
+	div[class="check_font"]{
+	font-size: .8em;
+	float:right;
+	min-width: 250px;
+	min-height: 24px;
+	max-width: 250px;
+	max-height: 24px;
+	margin-bottom: 14px;
+	}
+	.pw-update-title{
+	letter-spacing: 2px;
+	margin-bottom: .5em;
+	font-size: 2.4em;
+	}
+	.fontee{
+	font-family: 'IBMPlexSansKR-Regular';
+	top: -310px;
+	left: 464px;
+	position: relative;
+	width: 100px;
+	text-align: left;
+	}
+	.h-regi{
+	margin-top: 0.12em;
+	margin-bottom: 0.9em;
+	float: right;
+	margin-right: 0.8em;
+	}
+	#Id{
+	margin-bottom: -.4em;
+	}
+	#id_check{
+	position: relative;
+	top: -52px;
+/* 	border: 1px solid red;  */
+	}
+	#password_check{
+	position: relative;
+/* 	border: 1px solid blue;  */
+	top: -4px;
+	}
+	#name_check{
+	position: relative;
+/*  	border: 1px solid green;   */
+ 	top: 0px;
+	margin-bottom: 90px;
+	}
+	#email_check{
+	position: relative;
+/* 	border: 1px solid magenta;  */
+	top: 8px;
+	margin-bottom: 62px;
+	}
+	#phone_check{
+	position: relative;
+/* 	border: 1px solid teal;  */
+	top: 2px;
+	}
+	#f-id{
+	float: right;
+	}
+	.regi-btn-wrapper{
+	position: relative;
+	top: -18.2em;
+	left: -3em;
+	text-align: center;
+	width: 600px;
+	height: 1px;
+/*  	border: 1px solid red;  */
+/* 	z-index: 999; */
+	float: none;
+	}
+	input[id^="register-btn"], #revoke{
+	float: center;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin: .8em;
+	font-size: 1em;
+	}
+	input{
+	font-family: 'IBMPlexSansKR-Regular';
+	}

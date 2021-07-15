@@ -1,0 +1,350 @@
+@charset "UTF-8";
+
+/* 통합 본문 영역 최상위 div */
+.view-div{
+		width: 89em;
+        height: 57.6em;
+        background-color: #E6EEF8;  
+        border: 1px solid red;  
+        padding: 2em;
+        padding-top: 1em;
+        margin-top: 5em;
+        margin-left: 2.5em;
+        margin-right: 5em;
+        background: rgba(216, 227, 243, 0.6);            
+		box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+            inset -4px -4px 6px 0 rgba(255,255,255,.5),
+            inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+            outline: none;
+            border: none;
+            border-radius: 3rem;
+            z-index: -10;
+        margin-bottom: 2em;
+	}
+/* 여기서부터 board-list.css 재사용 */
+	.class-list-title{
+	letter-spacing: 2px;
+	margin-top: .2em;
+	margin-bottom: -.6em;
+	margin-left: .4em;
+	font-size: 2em;
+	color: #3B4654;
+	font-weight: bold;
+	text-align: center;
+	}
+	.class-list-tutor-name{
+	font-size: 1.6em;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 1.4em;
+	color: #3B4654;
+	}
+	/* 클래스 리스트 내부에 들어가는 이미지들 - 각자 */
+	/* #cla-li-pics와 통합함 */
+	.cla-li-sec{
+	display: inline-block;
+	background-size: cover;
+	width: 16.8em;
+	height: 23em;
+	margin-top: .2em;
+	margin-left: .2em;
+	border-radius: 3rem;
+	}
+	#img-class-wrapps{
+	margin-top: -.4em;
+	}
+	/* 튜터가 등록한 클래스 이미지의 wrapper, 즉 프레임 공통사항 */
+	div[class^="img-class-wrapper"]{
+/* 	border: 1px solid red; */
+	text-align: center;
+	width: 17.2em;
+	height: 23.2em;
+	padding: .8em 1em 1em .8em;
+/* 	margin-left: 2em; */
+	float: left;
+	border-radius: 3rem;
+	box-shadow: 0.5rem 0.5rem 0.5rem #BCC6D2,
+		-0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.726);
+        transition: linear .14s;
+        background-color: #E6EEF8;
+	}
+	
+	/* 튜터가 등록한 NOT NULL, 즉 필수 대표 이미지의 프레임이다. 정 중앙에 배치한다. */
+	.img-class-wrapper{
+/* 	border: 1px solid red; */
+	margin-left: 10em;
+	margin-right: 2em;
+	margin-bottom: 1em;
+	}
+	
+	/* 튜터가 2번째 클래스 이미지를 업로드한 경우, 메인 이미지의 왼 편에 배치한다. */
+	.img-class-wrapper2{
+	margin-top: -26em;
+	margin-left: 30.4em;
+/* 	border: 1px solid green; */
+	
+	}
+	/* 튜터가 3번째 클래스 이미지를 업로드한 경우, 메인 이미지의 오른 편에 배치한다. */
+	.img-class-wrapper3{
+/* 	border: 1px solid blue; */
+	margin-top: -26em;
+	margin-left: -10.4em;
+	
+	}
+	div[class^="img-class-wrapper"]:hover{
+	box-shadow: 1rem 1rem 1rem #BCC6D2, -1rem -1rem 1rem #F6FAFF;
+    background: rgb(236, 244, 255);
+    transition: linear .14s;
+	}
+	/* 클래스 리스트 - 이미지 wrapper를 호버하면 클래스 제목의 크기를 다소 키운다. */
+	.img-class-wrapper2:hover .cla-li-title{
+	font-size: .9em;
+	trnasition: .14s linear;
+	}
+/* 여기까지 board-list.css 재사용 & 활용 */
+	
+	
+	/* 여기서부터 board-view.css 자체 코드 */
+/* 각 영역 최상위 wrapper - 공통 form. 위치 선정을 위한 구체적 수치는 별도로 조작할 것. */
+	#board-sec, #bv-resume-wrapper{
+	   box-shadow:
+            -7px -7px 20px 2px rgb(247, 251, 255),
+            -4px -4px 10px 0px rgb(196, 205, 219), 
+            7px 7px 20px 0px rgba(46, 51, 59, 0.322),
+            4px 4px 10px 0px rgba(7, 7, 7, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),
+            inset 0px 0px 0px 0px rgba(0, 26, 255, 0.067),
+            inset 0px 0px 0px 0px rgba(255, 255, 255, 0.6),        
+            inset 0px 0px 0px 0px rgba(0, 68, 255, 0.067);
+    width: 38em;
+	height: 50em;	
+	text-align: center;
+	}
+	/* 게시글 통합 영역 : 상위 div */
+	#board-sec{
+/* 	border: 1px solid red; */
+	border-radius: 3rem;
+	margin: 1em;
+	margin-top: 2em;
+	padding: 2em;
+ 	overflow: hidden; 
+	}
+	#bv-resume-wrapper{
+	border-radius: 3rem;
+	margin: 1em;
+	margin-top: -55em;
+	margin-left: 45.8em;
+	padding: 2em;
+	overflow: hidden;
+	}
+		/* 클래스 게시글: 가격(포인트)영역 */ 
+/* 	.bv-price-wrapper{
+	margin-top: -5.6em;
+	margin-left: 35.6em;
+	font-size: 1.7em;
+	font-weight: bold;
+	color: #3B4654;
+	width: 7em;
+	} */
+	/* 게시글 정보 테이블과 튜터의 이력서 테이블 - 공통 사항 */
+	#board-table, #bv-resume-table, #review-tbl{
+/* 	border: 1px solid magenta; */
+	padding: .6em;
+/* 	border-collapse: collapse; */
+/* 	border: 1px solid lightgray; */
+	border-radius: 1.4rem;
+	overflow: none;
+	width: 38em;
+	text-align: center;
+	background-color: rgba(255, 255, 255, .2);          
+	box-shadow: 0.5rem 0.5rem 0.5rem rgb(211, 220, 228), 
+	-0.5rem -0.5rem 0.5rem rgba(244, 249, 255, 0.626);
+	margin-bottom: 0em;
+	}
+	#bv-resume-table{
+	margin-top: -.6em;
+	height: 10em;
+	text-align: center;
+	margin-bottom: -1em;
+	}
+	.board-sec, .resume-sec {
+	max-height: 10em;
+	overflow: auto;
+	overflow-x: hidden;
+	}
+	.resume-sec{
+	height: 4em;
+	max-height: 4em;
+	overflow: auto;
+	}
+	.bv-context{
+	
+	}
+	th, td{
+	padding: .2em;
+	border: 1px solid rgb(219, 220, 239);
+	border-collapse: collapse;	
+	}
+	#review-tbl{
+	overflow: hidden;
+	}
+	
+	#review-tbl td{
+/* 	border: 1px solid lightgray; */
+	}
+	/* 우측의 3종 테이블의 th : 즉 테이블 타이틀 일괄 */
+	.all-table-title{
+	font-size: 1em;
+	top: 0em;
+	position: sticky;
+	background: #E6EEF8;
+	padding: .2em .2em .2em .2em;
+	overflow: hidden;
+	vorder: 1px solid magenta;
+	}
+ 	th[class^="review-th"]{
+		top: 1.6em;
+		height: 1.2em;
+		padding-left: .4em;
+		padding-right: .4em;
+		position: sticky;
+		background: #E6EEF8;
+	} 
+	#class-tbl-th{
+	font-size: 4em;
+	}
+	#board-table{
+	margin-top: .4em;
+/* 	border: 2px solid teal; */
+	border: none;
+	border-radius: 1.4rem;
+	overflow: none;
+	width: 38em;
+	text-align: center;
+	background-color: rgba(255, 255, 255, .2);
+	}
+	#board-table th{
+	font-size: .9em;
+	/* padding: 상하좌우를 일괄로 선언하는 경우 그 순서는 다음과 같다:
+		상단 (val1) 우측(val2) 하단(val3) 좌측(val4)*/
+	padding: .6em .8em .8em 1em;
+	}
+
+	/* overflow: auto 설정으로 해당 테이블의 height보다 컨텐츠의 양이 많으면 
+		자동으로 vertical-scroll bar가 붙게 된다. */
+	/* 리뷰 테이블의 수업번호 th 항목 */
+	/* 리뷰 테이블의 학생 아이디 th 항목 */
+	/* 리뷰 테이블의 후기 내용 th 항목 */
+	/* 리뷰 테이블의 평점 th 항목 */
+	/* 리뷰 테이블의 작성일 th 항목 */
+	/* th의 너비 때문에 텍스트가 자동 줄바꿈이 된다면 
+		각 th에 개별적으로 width를 적용시켜주면 됨. */
+	
+	.review-th-no{
+	width: 5em;	
+	}
+	.review-th-id{
+	width: 6.2em;
+	}
+	.review-th-cont{
+	
+	}
+	.review-th-score{
+	width: 2.2em;
+	}
+	.review-th-date{
+	width: 6em;
+	}
+	#review-sec{
+	margin-top: 2em;
+	max-height: 10.2em;
+	overflow: auto;
+	overflow-x: hidden;
+	margin-bottom: 1em;
+	border-radius: 1.4rem 0rem 1.4rem 0rem;
+	}
+	.bv-what-is-this{
+	right: 50em;
+	}
+	
+	.bv-t-info-title{
+	font-size: 1.6em;
+	font-weight: bold;
+	}
+	/* 클래스 게시글: 본문 영역 - outer-div */
+	.bv-context{
+/* 	overflow: auto; */
+/*  	border: 1px solid yellowgreen;  */
+	width: 38em;
+	height: 13.6em;
+/* 	margin-top: -10em;
+	margin-left: -6em; */
+ 	margin-top: 30.4em;  
+	margin-left: 0em;
+	border-radius: .3rem .3rem 3rem 3rem;
+	box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+            inset -4px -4px 6px 0 rgba(255,255,255,.5),
+            inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+	}
+	/* 클래스 게시글: 본문 영역 - inner-div */
+	.bv-context-inner{
+	width: 33em;
+	height: 12em;
+	margin: 2em;
+	margin-top: 2em;
+/*   	border: 1px solid magenta;	   */
+/* 	background: rgba(216, 227, 243, 0.6); */  
+	font-size: 1.1em;
+	color:  #3B4654;
+	}
+	/* 클래스 게시글: 본문 영역 - 본문 p 태그 */
+	#bv-context-p{
+/*  	border: 1px solid orange;  */
+	text-align: left;
+	width: 30em;
+	text-align: center;
+	padding-top: 1.4em;
+	overflow: auto;
+	}
+	.bv-apply-btn{
+/* 	border: 1px solid magenta; */
+	}
+	.bv-price{
+	position: absolute;
+	top: 42.4em;
+	left: 46.4em;
+	width: 10em;
+/* 	border: 1px solid green; */
+	z-index: 999;
+	font-size: 1.4em;
+	font-weight: bold;
+	color: rgba(59, 70, 84, 0.80);
+	}	
+	#enrollment-btn{
+	margin-top: 1em;
+ 	padding-top: 2.4em; 
+	background: transparent;
+	border: transparent;
+	outline: trnasparent;
+	font-size: 1.4em;
+	width: 36em;
+	height: 20em;
+	border-radius: 50% 50% 0em 0em;
+	margin-left: -4.5em;
+	}
+
+	/* 관리자 전용 기능 : 게시글 삭제 */
+	#delete-admin-btn{
+	background: red;
+	color: white;
+	}
+
+	
+	
+	
+	
+	
+	
+	
